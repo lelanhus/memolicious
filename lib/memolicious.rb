@@ -3,17 +3,8 @@ require 'date'
 module Memolicious
   class << self
     
-    def initialize(n = 1, correct = true, ef = 2.5)
-      @rep = n
-      @correct = true
-      @ef = ef
-    end
-    
-    def next_rep(n = 1, correct = true, ef = 2.5)
-      return Date.today if !correct
-      return Date.today + 1 if n == 1
-      return Date.today + 6 if n == 2
-      Date.today + 16
+    def next_rep
+
     end
     
     def easiness_factor(previous_ef, quality)
