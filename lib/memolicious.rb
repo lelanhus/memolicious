@@ -3,7 +3,9 @@ require 'date'
 module Memolicious
   class << self
     
-    def next_repetition(correct)
+    def next_rep(n = 1, correct)
+      return Date.today + 6 if correct && n == 2
+      return Date.today + 1 if correct
       Date.today
     end
     
