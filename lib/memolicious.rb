@@ -3,7 +3,11 @@ require 'date'
 module Memolicious
   class << self
     
-
+    def initialize(n = 1, correct = true, ef = 2.5)
+      @rep = n
+      @correct = true
+      @ef = ef
+    end
     
     def next_rep(n = 1, correct = true, ef = 2.5)
       return Date.today if !correct

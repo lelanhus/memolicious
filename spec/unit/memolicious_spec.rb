@@ -5,6 +5,7 @@ describe Memolicious do
   describe "#next_repitition" do
     
     context "missed question" do
+
       it "should set the next repitition as today no matter the repetition number" do
         n = [1,2,3,2,100,28,29]
         n.each do |n|
