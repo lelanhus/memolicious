@@ -1,0 +1,3 @@
+module Memolicious
+  # Your code goes here...
+end
