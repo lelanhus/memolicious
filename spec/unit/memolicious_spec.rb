@@ -26,6 +26,14 @@ describe Memolicious do
         next_repetition = Date.today + 6
         Memolicious.next_rep(2).should == next_repetition
       end
+      
+      context "not first or second repetition" do
+      
+        it "should set the next repetition to 16 days from today if previous ef was 2.5" do
+          next_repetition = Date.today + 16
+          Memolicious.next_rep(3, true, 2.5).should == next_repetition
+        end
+      end
     end
   end
   
