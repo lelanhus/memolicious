@@ -4,9 +4,9 @@ module Memolicious
   class << self
     
     def next_rep(n = 1, correct = true)
-      return Date.today + 6 if correct && n == 2
-      return Date.today + 1 if correct
-      Date.today
+      return Date.today if !correct
+      return Date.today + 1 if n == 1
+      Date.today + 6
     end
     
     def easiness_factor(previous_ef, quality)
