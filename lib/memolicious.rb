@@ -8,10 +8,14 @@ module Memolicious
     end
     
     def easiness_factor(previous_ef, quality)
-      new_ef = previous_ef - 0.8 + 0.28 * quality - 0.02 * quality * quality
-      new_ef.round(2)
+      calculate_ef(previous_ef, quality).round(2)
     end
     
+    private
+    
+    def calculate_ef(previous_ef, quality)
+      previous_ef - 0.8 + 0.28 * quality - 0.02 * quality * quality
+    end
     
   end
 end
