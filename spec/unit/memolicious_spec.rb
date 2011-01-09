@@ -13,8 +13,10 @@ describe Memolicious do
         stub_next_rep(correct: true).should > Date.today
       end
     
-      it "should schedule next rep for the next day if this is the first iteration" do
-        stub_next_rep(correct: true, iteration: 1).should == Date.today.succ
+      it "should schedule next rep for one to three days if this is the first iteration" do
+        three_days = Date.today + 3
+        stub_next_rep(correct: true, iteration: 1).should > Date.today
+        stub_next_rep(correct: true, iteration: 1).should < three_days
       end
       
       it "should schedule next rep for three to seven days if this is the second iteration" do
