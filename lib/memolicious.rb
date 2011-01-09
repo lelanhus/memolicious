@@ -3,7 +3,7 @@ require 'date'
 module Memolicious
   class << self
     
-    def next_rep(options = {})
+    def next_rep(options)
       data = {}
       data[:date] = calculate_date(options)
       data[:easiness_factor] = 2.5
