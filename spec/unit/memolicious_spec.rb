@@ -7,8 +7,18 @@ describe Memolicious do
       stub_next_rep(correct: false).should == Date.today
     end
     
-    it "should schedule next rep for a day in the future if answer is correct" do
-      stub_next_rep(correct: true).should > Date.today
+    context "correct answer" do
+    
+      it "should schedule next rep for a day in the future if answer is correct" do
+        stub_next_rep(correct: true).should > Date.today
+      end
+    
+      it "should schedule next ref for the next day if this is the first iteration" do
+        stub_next_rep(correct: true, iteration: 1).should == Date.today.succ
+      end
+      
+      
+    
     end
   end
   
