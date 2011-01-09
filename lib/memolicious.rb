@@ -4,7 +4,9 @@ module Memolicious
   class << self
     
     def next_rep(options = {})
-      Date.today
+      date = Date.today
+      return date unless options[:correct] == true
+      date.succ
     end
     
   end
