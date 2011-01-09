@@ -5,9 +5,9 @@ module Memolicious
     
     def next_rep(options = {})
       data = {}
-      date = calculate_date(options)
-      ef = 2.5
-      data.merge(:date => date, :easiness_factor => ef)
+      data[:date] = calculate_date(options)
+      data[:easiness_factor] = 2.5
+      return data
     end
     
     private
