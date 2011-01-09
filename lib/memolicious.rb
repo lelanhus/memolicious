@@ -5,8 +5,9 @@ module Memolicious
     
     def next_rep(options = {})
       date = Date.today
-      return date unless options[:correct] == true
-      date.succ
+      return date unless options[:correct]
+      return date.succ if options[:iteration] == 1
+      date + Random.new.rand(3..7)
     end
     
   end
